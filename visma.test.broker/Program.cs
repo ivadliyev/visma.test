@@ -1,9 +1,27 @@
+using Microsoft.EntityFrameworkCore;
+using visma.test.broker;
+using visma.test.broker.Models.Dtos;
+using visma.test.broker.Repositories.Channel;
+using visma.test.broker.Services.Channel;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//add context
+builder.Services.AddDbContext<BrokerDbContext>(opt => opt.UseSqlite("Data Source=broker.db"));
+
+//add repos
+builder.Services.AddScoped<IChannelRepository, ChannelRepository>();
+
+//add services
+builder.Services.AddScoped<IChannelService, ChannelService>();
+
+//automapper
+builder.Services.AddAutoMapper(typeof(AutomapperProfile));
 
 var app = builder.Build();
 
@@ -16,24 +34,20 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-app.MapGet("/weatherforecast", () =>
+//routes
+app.MapGet("api/channels", async (IChannelService channelService) =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    return await channelService.GetAll();
 })
-.WithName("GetWeatherForecast")
+.WithName("GetAllChannels")
+.WithOpenApi();
+app.MapPost("api/channels", async (ChannelCreateDto model, IChannelService channelService) =>
+{
+    var channel =  await channelService.Create(model);
+    return Results.Created($"api/channels/{channel.Id}", channel);
+})
+.WithName("CreateChannel")
 .WithOpenApi();
 
 app.Run();

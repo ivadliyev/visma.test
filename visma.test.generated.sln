@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.broker", "visma.test.broker\visma.test.broker.csproj", "{20E750B0-4233-4183-BC64-44989195FC9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.broker", "visma.test.broker\visma.test.broker.csproj", "{DE912E81-58DB-4500-B859-6BD853132791}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.subscriber", "visma.test.subscriber\visma.test.subscriber.csproj", "{2B55ED2B-D81A-4A44-848F-0E9D6002D230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.subscriber", "visma.test.subscriber\visma.test.subscriber.csproj", "{0C4C3553-C987-477F-A326-5FBB58F9CBD2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.tests", "visma.test.tests\visma.test.tests.csproj", "{6FD8A86C-2BEA-444E-8630-1A5BC3D7103C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "visma.test.tests", "visma.test.tests\visma.test.tests.csproj", "{A14AEBE7-84C2-4F95-AE10-4AB378D374A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20E750B0-4233-4183-BC64-44989195FC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20E750B0-4233-4183-BC64-44989195FC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20E750B0-4233-4183-BC64-44989195FC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20E750B0-4233-4183-BC64-44989195FC9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B55ED2B-D81A-4A44-848F-0E9D6002D230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B55ED2B-D81A-4A44-848F-0E9D6002D230}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B55ED2B-D81A-4A44-848F-0E9D6002D230}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B55ED2B-D81A-4A44-848F-0E9D6002D230}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FD8A86C-2BEA-444E-8630-1A5BC3D7103C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FD8A86C-2BEA-444E-8630-1A5BC3D7103C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FD8A86C-2BEA-444E-8630-1A5BC3D7103C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FD8A86C-2BEA-444E-8630-1A5BC3D7103C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE912E81-58DB-4500-B859-6BD853132791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE912E81-58DB-4500-B859-6BD853132791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE912E81-58DB-4500-B859-6BD853132791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE912E81-58DB-4500-B859-6BD853132791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4C3553-C987-477F-A326-5FBB58F9CBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4C3553-C987-477F-A326-5FBB58F9CBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4C3553-C987-477F-A326-5FBB58F9CBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4C3553-C987-477F-A326-5FBB58F9CBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14AEBE7-84C2-4F95-AE10-4AB378D374A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14AEBE7-84C2-4F95-AE10-4AB378D374A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14AEBE7-84C2-4F95-AE10-4AB378D374A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14AEBE7-84C2-4F95-AE10-4AB378D374A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
