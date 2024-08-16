@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using visma.test.broker;
 using visma.test.broker.Models.Dtos;
 using visma.test.broker.Repositories.Channel;
+using visma.test.broker.Repositories.Message;
 using visma.test.broker.Services.Channel;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<BrokerDbContext>(opt => opt.UseSqlite("Data Source
 
 //add repos
 builder.Services.AddScoped<IChannelRepository, ChannelRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 
 //add services
 builder.Services.AddScoped<IChannelService, ChannelService>();
@@ -51,8 +53,3 @@ app.MapPost("api/channels", async (ChannelCreateDto model, IChannelService chann
 .WithOpenApi();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

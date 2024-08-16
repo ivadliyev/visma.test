@@ -8,8 +8,8 @@ public static class ChannelFixture
     public static List<Channel> GetListToInsert()
     {
         return [
-            new Channel() { Name = "Default" },
-            new Channel() { Name = "Channel 1" }
+            new Channel() { Name = "Default", Subscriptions = [ new Subscription(), new Subscription() ] },
+            new Channel() { Name = "Channel 1", Subscriptions = [ new Subscription(), new Subscription() ] }
         ];
     }
 

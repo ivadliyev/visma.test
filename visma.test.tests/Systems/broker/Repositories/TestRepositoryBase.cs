@@ -21,6 +21,13 @@ public class TestRepositoryBase
 
         //seed memory db
         context.Channels.AddRange(ChannelFixture.GetListToInsert());
+        foreach(var sub in context.Subscriptions.ToList())
+        {
+            var messagesToInsert = MessageFixture.GetListToInsert();
+            messagesToInsert.ForEach(m => m.SubscriptionId = sub.Id);
+
+            context.Messages.AddRange(messagesToInsert);
+        }
 
         context.SaveChanges();       
     }
