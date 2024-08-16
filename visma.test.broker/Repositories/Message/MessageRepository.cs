@@ -37,9 +37,7 @@ public class MessageRepository(BrokerDbContext context): IMessageRepository
 
     public async Task<Models.Message> Update(int id, Models.Message message)
     {
-        var dbMessage = await _context.Messages.FindAsync(id);
-        if (dbMessage == null) throw new NullReferenceException("Find message");
-
+        var dbMessage = await _context.Messages.FindAsync(id) ?? throw new NullReferenceException("Find message");
         dbMessage.Status = message.Status;
         dbMessage.Body = message.Body;
 

@@ -27,4 +27,25 @@ public class TestChannelRepository: TestRepositoryBase
         var result = await sut.Create(ChannelFixture.GetOneItemToInsert());
         result.As<Channel>().Id.Should().BeGreaterThan(0);
     }
+
+    [Test]
+    public async Task Test_Get_ReturnsSame()
+    {
+        using var context = new BrokerDbContext(_options);
+        var sut = new ChannelRepository(context);
+        var channel = context.Channels.First();
+
+        var result = await sut.Get(channel.Id);
+        result.Should().BeSameAs(channel);
+    }
+
+    [Test]
+    public async Task Test_Get_ThrowsException()
+    {
+        using var context = new BrokerDbContext(_options);
+        var sut = new ChannelRepository(context);
+
+        Func<Task> act = async () => await sut.Get(999);
+        await act.Should().ThrowAsync<NullReferenceException>();
+    }
 }
