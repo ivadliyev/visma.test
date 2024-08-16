@@ -15,6 +15,11 @@ public class ChannelRepository(BrokerDbContext context) : IChannelRepository
         return channel;
     }
 
+    public async Task<Models.Channel> Get(int id)
+    {
+        return (await _context.Channels.FirstOrDefaultAsync(_ => _.Id == id)) ?? throw new NullReferenceException("Get channel");
+    }
+
     public async Task<List<Models.Channel>> GetAll()
     {
         return await _context.Channels.ToListAsync();

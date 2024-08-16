@@ -19,4 +19,11 @@ public interface IChannelService
     /// <param name="model">ChannelCreateDto</param>
     /// <returns>Channel dto</returns>/
     Task<ChannelDto> Create(ChannelCreateDto model);
+
+    /// <summary>
+    /// Get one channel by id
+    /// </summary>
+    /// <param name="id">Id of the channel</param>
+    /// <returns>ChannelDto</returns>
+    Task<ChannelDto> Get(int id);
 }

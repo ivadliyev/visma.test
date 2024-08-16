@@ -15,6 +15,11 @@ public class ChannelService(IChannelRepository channelRepository, IMapper mapper
         return _mapper.Map<Models.Channel, ChannelDto>(await _channelRepository.Create(channel));
     }
 
+    public async Task<ChannelDto> Get(int id)
+    {
+        return _mapper.Map<Models.Channel, ChannelDto>(await _channelRepository.Get(id));
+    }
+
     public async Task<List<ChannelDto>> GetAll()
     {
         return (await _channelRepository.GetAll())

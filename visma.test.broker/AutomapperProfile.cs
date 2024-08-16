@@ -10,5 +10,11 @@ public class AutomapperProfile : Profile
     {
         CreateMap<Channel, ChannelDto>();
         CreateMap<ChannelCreateDto, Channel>();
+        
+        CreateMap<Message, MessageDto>();
+        CreateMap<MessageCreateDto, Message>();
+        CreateMap<MessageEditDto, Message>();
+
+        CreateMap<Subscription, SubscriptionDto>();
     }
 }
