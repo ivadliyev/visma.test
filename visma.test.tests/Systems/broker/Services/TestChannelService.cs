@@ -22,6 +22,10 @@ public class TestChannelService: TestServiceBase
         _mockChannelRepository
             .Setup(_ => _.Create(It.IsAny<Channel>()))
             .ReturnsAsync(ChannelFixture.GetOne());
+
+        _mockChannelRepository
+            .Setup(_ => _.Get(It.IsAny<int>()))
+            .ReturnsAsync(ChannelFixture.GetOne());
     }
 
     [Test]
@@ -57,6 +61,25 @@ public class TestChannelService: TestServiceBase
         var sut = new ChannelService(_mockChannelRepository.Object, _mapper);
 
         var result = await sut.Create(ChannelFixture.GetOneCreateDto());
+
+        result.Should().NotBeNull().And.BeOfType(typeof(ChannelDto));
+    }
+
+    [Test]
+    public async Task Test_Get_InvokesRepository()
+    {
+        var sut = new ChannelService(_mockChannelRepository.Object, _mapper);
+
+        var result = await sut.Get(1);
+        _mockChannelRepository.Verify(_ => _.Get(It.IsAny<int>()), Times.AtLeastOnce);
+    }
+
+    [Test]
+    public async Task Test_Get_ReturnsDto()
+    {
+        var sut = new ChannelService(_mockChannelRepository.Object, _mapper);
+
+        var result = await sut.Get(1);
 
         result.Should().NotBeNull().And.BeOfType(typeof(ChannelDto));
     }

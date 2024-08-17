@@ -31,6 +31,11 @@ public static class ChannelFixture
         return new Channel() { Id = 1, Name = "Default" };
     }
 
+    public static ChannelDto GetOneDto()
+    {
+        return new ChannelDto() { Id = 1, Name = "Default" };
+    }
+
     public static ChannelCreateDto GetOneCreateDto()
     {
         return new ChannelCreateDto() { Name = "Default" };
