@@ -8,7 +8,7 @@
 
 #### For running locally:
 
-Install .net SDK v8 from [https://dotnet.microsoft.com/en-us/download/dotnet/7.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+Install .net SDK v8 from [https://dotnet.microsoft.com/en-us/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 
 
